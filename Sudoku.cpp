@@ -101,26 +101,13 @@ std::vector<int> nextSolution(std::vector<int> task, std::vector<int> oldSolutio
 
 int main()
 {
-    std::vector<int> task = {
-                             8,0,0,0,0,0,0,0,0,
-                             0,0,3,6,0,0,0,0,0,
-                             0,7,0,0,9,0,2,0,0,
-                             0,5,0,0,0,7,0,0,0,
-                             0,0,0,0,4,5,7,0,0,
-                             0,0,0,1,0,0,0,3,0,
-                             0,0,1,0,0,0,0,6,8,
-                             0,0,8,5,0,0,0,1,0,
-                             0,9,0,0,0,0,4,0,0
-                             };
-    //std::vector<int> task = { 5,3,9,8,0,6,4,1,2,7,2,8,3,1,4,9,6,5,6,4,1,2,9,5,7,3,8,4,6,2,5,3,9,8,7,1,3,8,5,7,2,1,6,4,9,1,9,7,4,6,8,2,5,3,2,5,6,1,8,7,3,9,4,9,1,3,6,4,2,5,8,7,8,7,4,9,5,3,1,2,6 };
-    //std::vector<int> task;
-    //std::vector<int> task;
-    /*for (int i = 0; i < 81; i++)
+    std::vector<int> task;
+    for (int i = 0; i < 81; i++)
     {
         int t = 0;
         //std::cin >> t;
         task.push_back(t);
-    }*/
+    }
     std::vector<int> solution = task;
 
     for (int i = 0; i < 81; i++)
