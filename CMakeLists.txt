@@ -1,0 +1,21 @@
+cmake_minimum_required(VERSION 3.20)
+project(DumbSudoku LANGUAGES CXX)
+
+find_package(Threads REQUIRED)
+
+if(NOT WIN32)
+    message(FATAL_ERROR "DumbSudoku requires Windows and the C++ AMP runtime.")
+endif()
+
+add_executable(DumbSudoku WIN32 Sudoku.cpp)
+target_compile_features(DumbSudoku PRIVATE cxx_std_17)
+target_compile_definitions(DumbSudoku PRIVATE UNICODE _UNICODE)
+if(MSVC)
+    target_compile_options(DumbSudoku PRIVATE /W4 /utf-8 /D_SILENCE_AMP_DEPRECATION_WARNINGS)
+else()
+    target_compile_options(DumbSudoku PRIVATE -Wall -Wextra -Wpedantic -Wno-cast-function-type)
+endif()
+target_link_libraries(DumbSudoku PRIVATE comdlg32 user32 gdi32 Threads::Threads)
+if(MINGW)
+    target_link_options(DumbSudoku PRIVATE -municode)
+endif()
